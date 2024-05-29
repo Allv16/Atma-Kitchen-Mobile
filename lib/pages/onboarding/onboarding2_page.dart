@@ -46,7 +46,7 @@ class Onboarding2Page extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: PaddingConstants.PADDING_SMALL),
-              titleText("Best Bakrey In Town!"),
+              titleText("Best Bakery In Town!"),
               const SizedBox(height: PaddingConstants.PADDING_XS),
               contentText(
                   "Located in the heart of Yogyakarta, Atma Kitchen is a bakery that offers a variety of delicious baked goods, varying from bread, cakes, pastries, and more. And we serve hampers for special occasions too!"),

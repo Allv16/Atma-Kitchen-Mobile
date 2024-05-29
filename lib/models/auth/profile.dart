@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:atma_kitchen/models/auth/user.dart';
 
 class Profile {
@@ -7,6 +9,7 @@ class Profile {
   String? gender;
   int? points;
   String? phone;
+  double? balance;
   User? user;
 
   Profile(

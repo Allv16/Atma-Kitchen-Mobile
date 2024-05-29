@@ -134,7 +134,7 @@ Widget _buildContent(BuildContext context, ProductController controller) {
                           crossAxisSpacing: PaddingConstants.PADDING_SMALL,
                           mainAxisSpacing: PaddingConstants.PADDING_SMALL,
                           childAspectRatio: MediaQuery.of(context).size.width /
-                              (MediaQuery.of(context).size.height / 1.45),
+                              (MediaQuery.of(context).size.height / 1.43),
                         ),
                         itemCount: controller.topProducts.value.length,
                         itemBuilder: (context, index) {
@@ -154,7 +154,7 @@ Widget _buildContent(BuildContext context, ProductController controller) {
                           crossAxisSpacing: PaddingConstants.PADDING_SMALL,
                           mainAxisSpacing: PaddingConstants.PADDING_SMALL,
                           childAspectRatio: MediaQuery.of(context).size.width /
-                              (MediaQuery.of(context).size.height / 1.3),
+                              (MediaQuery.of(context).size.height / 1.28),
                         ),
                         itemCount: controller.result.value.length,
                         itemBuilder: (context, index) {

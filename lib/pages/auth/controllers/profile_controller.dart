@@ -23,6 +23,11 @@ class ProfileController extends GetxController {
     var response =
         await httpService.get('auth/profile', token: box.read('token'));
     profile = Profile.fromJson(response['data']['customer']);
+
+    response = await httpService.get('/saldo/${box.read('customer_id')}',
+        token: box.read('token'));
+    profile!.balance = (response['data']['Saldo']['saldo'] as num).toDouble();
+
     isLoading.value = false;
   }
 

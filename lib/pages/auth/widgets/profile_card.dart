@@ -1,5 +1,6 @@
 import 'package:atma_kitchen/core/colors.dart';
 import 'package:atma_kitchen/core/constants.dart';
+import 'package:atma_kitchen/core/utils.dart';
 import 'package:atma_kitchen/models/auth/profile.dart';
 import 'package:atma_kitchen/pages/auth/widgets/profile_item_list.dart';
 import 'package:flutter/material.dart';
@@ -83,8 +84,10 @@ Padding profileCard(BuildContext context, Profile profile) => Padding(
                         DateFormat('dd MMM yyyy').format(profile.birthDate!)),
                     Row(
                       children: [
-                        profileItem(Icons.attach_money_outlined,
-                            AppColors.kPrimary, "Rp1.000.000"),
+                        profileItem(
+                            Icons.attach_money_outlined,
+                            AppColors.kPrimary,
+                            "${currencyFormat(profile.balance!)}"),
                         const SizedBox(width: PaddingConstants.PADDING_XS),
                         profileItem(Icons.stars_outlined, AppColors.kSecondary,
                             "${profile.points} Poin")
