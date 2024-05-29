@@ -44,7 +44,6 @@ class LoginController extends GetxController {
             break;
           case 4:
             box.write("customer_id", loginResponse.user!.customer!.id);
-            print(box.read("customer_id"));
             Get.offAllNamed(RoutesName.mainScreen);
             break;
         }
