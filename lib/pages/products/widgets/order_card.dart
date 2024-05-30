@@ -2,10 +2,12 @@ import 'package:atma_kitchen/core/constants.dart';
 import 'package:atma_kitchen/core/utils.dart';
 import 'package:atma_kitchen/models/product/transaction.dart';
 import 'package:atma_kitchen/pages/products/widgets/product_list.dart';
+import 'package:atma_kitchen/widgets/buttons.dart';
 import 'package:atma_kitchen/widgets/pill.dart';
 import 'package:flutter/material.dart';
 
-Container orderCard(BuildContext context, Transaction transaction) {
+Container orderCard(BuildContext context, Transaction transaction,
+    Function(String id) onClick) {
   return Container(
     width: double.infinity,
     decoration: BoxDecoration(
@@ -74,8 +76,12 @@ Container orderCard(BuildContext context, Transaction transaction) {
                           fontSize: TextConstants.TEXT_SMALL)),
                 ],
               ),
-              // primarySmallButton(
-              //     context: context, text: "Details", onPressed: () {})
+              transaction.status == "Delivered"
+                  ? primarySmallButton(
+                      context: context,
+                      text: "Complete",
+                      onPressed: () => onClick(transaction.id!))
+                  : const SizedBox()
             ],
           )
         ],

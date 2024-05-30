@@ -17,17 +17,6 @@ class OrderListPage extends StatelessWidget {
               context, 'Search Products', controller.filterTransaction),
           body: Column(
             children: [
-              // SizedBox(
-              //     height: 50,
-              //     child: filterList([
-              //       'All',
-              //       'Pending',
-              //       'Completed',
-              //       'Cancelled',
-              //       'asdsdas',
-              //       'asdasdasdf',
-              //       'adavasd'
-              //     ])),
               controller.loading.value
                   ? const Center(child: CircularProgressIndicator())
                   : Expanded(
@@ -40,7 +29,9 @@ class OrderListPage extends StatelessWidget {
                             return Column(
                               children: [
                                 orderCard(
-                                    context, controller.result.value[index]),
+                                    context,
+                                    controller.result.value[index],
+                                    controller.updateTransactionToCompleted),
                                 const SizedBox(
                                   height: PaddingConstants.PADDING_SMALL,
                                 )

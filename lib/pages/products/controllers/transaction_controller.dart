@@ -1,6 +1,7 @@
 import 'package:atma_kitchen/core/services/http_services.dart';
 import 'package:atma_kitchen/models/product/transaction.dart';
 import 'package:atma_kitchen/pages/auth/controllers/profile_controller.dart';
+import 'package:atma_kitchen/widgets/snackbar.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
@@ -48,5 +49,18 @@ class TransactionController extends GetxController {
                   .contains(productName.toLowerCase())))
           .toList();
     }
+  }
+
+  void onRefresh() {
+    getTransactions();
+  }
+
+  void updateTransactionToCompleted(String id) async {
+    var response = await httpService.put('/transaksi/completed/$id', {});
+    if (response != null) {
+      onRefresh();
+    }
+    successSnackBar("Success Completed Transaction",
+        "Thank you for your purchases!", () {});
   }
 }
