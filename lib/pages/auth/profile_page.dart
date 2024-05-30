@@ -50,15 +50,19 @@ class ProfilePage extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: PaddingConstants.PADDING_5XL),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                    horizontal: PaddingConstants.PADDING_DEFAULT),
-                child: primaryAlert(
-                    "Refund Available",
-                    "You have some balance in your account. You can apply for a refund",
-                    Icons.info,
-                    AppColors.kPrimary),
-              ),
+              !controller.isLoading.value
+                  ? controller.profile!.balance! > 0
+                      ? Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: PaddingConstants.PADDING_DEFAULT),
+                          child: primaryAlert(
+                              "Refund Available",
+                              "You have some balance in your account. You can apply for a refund",
+                              Icons.info,
+                              AppColors.kPrimary),
+                        )
+                      : const SizedBox()
+                  : const SizedBox(),
               const SizedBox(height: PaddingConstants.PADDING_MEDIUM),
               Divider(
                 color: AppColors.kPrimaryLighter,
@@ -69,8 +73,8 @@ class ProfilePage extends StatelessWidget {
                   () => {Get.toNamed(RoutesName.orderList)}),
               baseListTile(
                   Icons.house_outlined, "Address List", true, () => {}),
-              baseListTile(
-                  Icons.payment_outlined, "Balance Info", true, () => {}),
+              baseListTile(Icons.payment_outlined, "Balance Info", true,
+                  () => {Get.toNamed(RoutesName.refund)}),
               baseListTile(
                   Icons.shield_outlined, "Manage Password", true, () => {}),
               baseListTile(

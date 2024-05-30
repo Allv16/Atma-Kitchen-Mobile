@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:atma_kitchen/models/auth/user.dart';
 
 class Profile {

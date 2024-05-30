@@ -1,6 +1,6 @@
 // ignore_for_file: constant_identifier_names
 
-const String BASE_URL = "http://192.168.1.5:8080/api/";
+const String BASE_URL = "http://192.168.1.17:8080/api/";
 const String API_TOKEN = "L6f15OCM8ZzAf3PJlBAHSchamc57i1voeD2fI3Y3deb152f6";
 
 class PaddingConstants {

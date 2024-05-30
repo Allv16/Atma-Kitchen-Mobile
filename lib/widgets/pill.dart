@@ -25,11 +25,11 @@ Container statusPill(String text) {
   Color color = AppColors.success;
   Color textColor = AppColors.kPrimary;
   switch (text) {
-    case 'On Process':
-      color = AppColors.warning;
-      textColor = AppColors.kSecondary;
-      break;
     case 'Completed':
+      color = AppColors.kPrimaryLighter;
+      textColor = AppColors.kPrimary;
+      break;
+    case 'Ready':
       color = AppColors.kPrimaryLighter;
       textColor = AppColors.kPrimary;
       break;
@@ -38,7 +38,9 @@ Container statusPill(String text) {
       textColor = AppColors.errorSurface;
       break;
     default:
-      null;
+      color = AppColors.warning;
+      textColor = AppColors.kSecondary;
+      break;
   }
   return Container(
     padding: const EdgeInsets.symmetric(

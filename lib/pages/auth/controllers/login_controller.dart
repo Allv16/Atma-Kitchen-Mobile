@@ -4,7 +4,6 @@ import 'package:atma_kitchen/models/auth/api_response.dart';
 import 'package:atma_kitchen/widgets/snackbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:get_storage/get_storage.dart';
 
 class LoginController extends GetxController {
@@ -44,7 +43,6 @@ class LoginController extends GetxController {
             break;
           case 4:
             box.write("customer_id", loginResponse.user!.customer!.id);
-            print(box.read("customer_id"));
             Get.offAllNamed(RoutesName.mainScreen);
             break;
         }
