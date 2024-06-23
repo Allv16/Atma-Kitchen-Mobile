@@ -28,7 +28,7 @@ Widget listRefund(Refund refund) {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            statusPill("On Process")
+            statusPill(refund.status!)
           ],
         ),
         const SizedBox(height: 10),

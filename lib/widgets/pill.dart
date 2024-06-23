@@ -29,6 +29,10 @@ Container statusPill(String text) {
       color = AppColors.kPrimaryLighter;
       textColor = AppColors.kPrimary;
       break;
+    case 'Confirmed':
+      color = AppColors.kPrimaryLighter;
+      textColor = AppColors.kPrimary;
+      break;
     case 'Delivered':
       color = AppColors.kPrimaryLighter;
       textColor = AppColors.kPrimary;

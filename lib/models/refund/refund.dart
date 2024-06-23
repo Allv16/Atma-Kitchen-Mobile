@@ -4,13 +4,15 @@ class Refund {
   DateTime? confirmDate;
   double? amount;
   String? accountNumber;
+  String? status;
 
   Refund(
       {this.id,
       this.requestDate,
       this.confirmDate,
       this.amount,
-      this.accountNumber});
+      this.accountNumber,
+      this.status});
 
   Refund.fromJson(Map<String, dynamic> json) {
     id = json['id_pengembalian_dana'];
@@ -22,5 +24,6 @@ class Refund {
         : null;
     amount = (json['jumlah_pengembalian'] as num).toDouble();
     accountNumber = json['nomor_rekening_tujuan'];
+    status = json['status_pengembalian'];
   }
 }

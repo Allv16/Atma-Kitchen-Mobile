@@ -10,7 +10,9 @@ import 'package:atma_kitchen/pages/products/home_page.dart';
 import 'package:atma_kitchen/pages/products/order_list_page.dart';
 import 'package:atma_kitchen/pages/refund/input_account_no.dart';
 import 'package:atma_kitchen/pages/refund/refund_page.dart';
-import 'package:atma_kitchen/pages/report/report_page.dart';
+import 'package:atma_kitchen/pages/report/income_expense_report.dart';
+import 'package:atma_kitchen/pages/report/ingredients_stock_report.dart';
+import 'package:atma_kitchen/pages/report/ingredients_usage_report.dart';
 import 'package:get/get.dart';
 
 class RoutesName {
@@ -20,7 +22,9 @@ class RoutesName {
   static const String forgetPassword = '/forget-password';
   static const String login = '/login';
   static const String home = '/home';
-  static const String report = '/report';
+  static const String ingredientsUsageReport = '/report/ingredients-usage';
+  static const String incomeExpenseReport = '/report/income-expense';
+  static const String ingredientStock = '/report/ingredients-stock';
   static const String absent = '/absent';
 
   static const String mainScreen = '/main-screen';
@@ -44,7 +48,13 @@ List<GetPage<dynamic>> appRoutes = [
     page: () => LoginPage(),
   ),
   GetPage(name: RoutesName.home, page: () => HomePage()),
-  GetPage(name: RoutesName.report, page: () => ReportPage()),
+  GetPage(
+      name: RoutesName.ingredientsUsageReport,
+      page: () => IngredientsUsageReport()),
+  GetPage(
+      name: RoutesName.incomeExpenseReport, page: () => IncomeExpenseReport()),
+  GetPage(
+      name: RoutesName.ingredientStock, page: () => IngredientsStockReport()),
   GetPage(name: RoutesName.absent, page: () => AbsentPage()),
   GetPage(
       name: RoutesName.mainScreen,

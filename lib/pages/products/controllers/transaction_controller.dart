@@ -23,7 +23,8 @@ class TransactionController extends GetxController {
 
   void getTransactions() async {
     loading.value = true;
-    var response = await httpService.get('transaksi/${box.read('customer_id')}',
+    var response = await httpService.get(
+        'transaksi/customer/${box.read('customer_id')}',
         token: box.read('token'));
     if (response != null) {
       List<Transaction> responseTransactions = [];
